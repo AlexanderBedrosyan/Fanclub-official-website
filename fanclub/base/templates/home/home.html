@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanclub Lokomotiv Plovdiv</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/home.css' %}">
+</head>
+<body style="background-color: grey; margin: 0; background-image: url('/static/images/background.jpg')">
+    <div class="grid-container">
+
+        <div class="scrolling-text-container">
+            <div class="scrolling-text">
+            <img src="/static/images/logo.png" alt="logo" class="logo">
+                <h2 class="above">Добре дошли в официалната страница на Фенклуб Локомотив Пловдив!</h2>
+            <img src="/static/images/logo.png" alt="logo" class="logo1">
+            </div>
+        </div>
+
+        <nav class="links">
+            <ul role="list">
+                <li class="link">
+                    <a href="{% url 'login' %}">Начало</a>
+                </li>
+                <li class="link">
+                    <a href="{% url 'cards' %}">Карти</a>
+                </li>
+                <li class="link">
+                    <a href="{% url 'store' %}">Магазин</a>
+                </li>
+                <li class="link">
+                    <a href="{% url 'initiatives' %}">Инициативи</a>
+                </li>
+                <li class="link">
+                    <a href="{% url 'events' %}">Събития</a>
+                </li>
+            </ul>
+            {% if request.user.is_authenticated %}
+                <!-- Потребителят е логнат -->
+                <span style="color: whitesmoke; font-size: 20px">Hello, {{ request.user }}</span>
+                <span><a href="{% url 'logout' %}" style="text-decoration: none; color: whitesmoke; font-size: 20px;">Logout</a></span>
+            {% else %}
+                <!-- Потребителят не е логнат -->
+                <span><a href="{% url 'login' %}" style="text-decoration: none; color: whitesmoke; font-size: 20px;">Please login</a></span>
+            {% endif %}
+        </nav>
+
+        <section class="advertising">
+            Място
+            <br><br>
+            за
+            <br><br>
+            реклама
+        </section>
+
+        <div class="content">
+            <div class="articles">
+                <article>
+                    <a href="#" style="text-decoration: none; color:whitesmoke">
+                    <h3 style="font-size: 35px; margin: 0px;">Бъди част от нас!</h3>
+                    <img src="/static/images/cards.jpg" alt="cards">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia nihil doloribus minus est veniam saepe aspernatur blanditiis, cum consequuntur? Repellendus inventore deserunt molestiae minus. Necessitatibus qui ipsam quo voluptatum.
+                    Expedita et excepturi, voluptate, similique est dignissimos a consequatur corporis consectetur sapiente totam quisquam voluptas omnis ab adipisci maiores cupiditate rerum fuga quas delectus odit illo distinctio assumenda non. Blanditiis.
+                    Praesentium soluta repellat aspernatur cumque pariatur ducimus aliquid explicabo sed ipsum ex aut nam necessitatibus, quo magnam optio. Ex iusto deleniti repudiandae aspernatur iure atque facilis sequi minima asperiores repellat.
+                    </p>
+                    </a>
+                </article>
+            </div>
+
+            <div class="articles-2">
+                <article>
+                    <a href="#" style="text-decoration: none; color: whitesmoke;">
+                    <h3 style="font-size: 35px; margin: 0px; ">Истинските майни!</h3>
+                    <img src="/static/images/cards.jpg" alt="cards">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia nihil doloribus minus est veniam saepe aspernatur blanditiis, cum consequuntur? Repellendus inventore deserunt molestiae minus. Necessitatibus qui ipsam quo voluptatum.
+                    Expedita et excepturi, voluptate, similique est dignissimos a consequatur corporis consectetur sapiente totam quisquam voluptas omnis ab adipisci maiores cupiditate rerum fuga quas delectus odit illo distinctio assumenda non. Blanditiis.
+                    Praesentium soluta repellat aspernatur cumque pariatur ducimus aliquid explicabo sed ipsum ex aut nam necessitatibus, quo magnam optio. Ex iusto deleniti repudiandae aspernatur iure atque facilis sequi minima asperiores repellat.
+                    </p>
+                    </a>
+                </article>
+            </div>
+
+
+            <div class="articles-2">
+                <article>
+                    <a href="#" style="text-decoration: none; color: whitesmoke;">
+                    <h3 style="font-size: 35px; margin: 0px;">Бъди част от нас!</h3>
+                    <img src="/static/images/cards.jpg" alt="cards">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quia nihil doloribus minus est veniam saepe aspernatur blanditiis, cum consequuntur? Repellendus inventore deserunt molestiae minus. Necessitatibus qui ipsam quo voluptatum.
+                    Expedita et excepturi, voluptate, similique est dignissimos a consequatur corporis consectetur sapiente totam quisquam voluptas omnis ab adipisci maiores cupiditate rerum fuga quas delectus odit illo distinctio assumenda non. Blanditiis.
+                    Praesentium soluta repellat aspernatur cumque pariatur ducimus aliquid explicabo sed ipsum ex aut nam necessitatibus, quo magnam optio. Ex iusto deleniti repudiandae aspernatur iure atque facilis sequi minima asperiores repellat.
+                    </p>
+                    </a>
+                </article>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/register.css' %}">
+</head>
+<body style="background-color: grey; margin: 0; background-image: url('/static/images/pld.png'); background-repeat: no-repeat;
+background-size: cover;">
+    <div class="register">
+         <form method="POST" action="">
+            {% csrf_token %}
+            Username
+            <input type="text" name="username" class="my-input-class" placeholder="Въведи потребителско име" value="{{ form.username.value|default_if_none:'' }}">
+            Email
+            <input type="text" name="email" class="my-input-class" placeholder="Въведи имейл" value="{{ form.email.value|default_if_none:'' }}">
+            Password
+            <input type="password" name="password1" placeholder="Въведи парола" class="my-input-class" value="{{ form.password1.value|default_if_none:'' }}">
+            Confirm password
+            <input type="password" name="password2" placeholder="Въведи парола" class="my-input-class">
+            <button type="submit" class="registerbtn">Register</button>
+        </form>
+        <div class="problem" style="background-color: grey">
+            {{form.errors}}
+        </div>
+    </div>
+</body>
+</html>
+

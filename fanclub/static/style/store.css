@@ -1,0 +1,46 @@
+.header {
+    border: 3px SOLID rgb(67, 63, 63);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    margin-left: -8px;
+    margin-right: -8px;
+    background-color: grey;
+    color: whitesmoke;
+    text-align: center;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.card {
+    display: inline-block;
+    margin: 12px;
+    border: 3px SOLID rgb(67, 63, 63);
+    border-radius: 9px;
+    background-color: whitesmoke;
+    box-shadow: 1px 4px 6px 8px rgba(0, 0, 0, 1);
+}
+
+.image-holder {
+    border-bottom: 2px SOLID rgb(67, 63, 63);
+}
+
+img {
+    width: 350px;
+    height: 340px;
+}
+
+.product-name a{
+    text-decoration: none;
+    color: rgb(49, 12, 12);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin-left: 42%;
+}
+
+p {
+    margin-left: 38.5%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}

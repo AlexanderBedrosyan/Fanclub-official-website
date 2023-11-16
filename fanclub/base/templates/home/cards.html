@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanclub Cards</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/cards.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body style="background-color: grey; margin: 0; background-image: url('/static/images/pld.png')">
+
+    <header class="header">
+        Абонаментни карти за сезон 2023/2024
+        <a href="{% url 'view_card'%}" style="color: whitesmoke; text-align: right; border: 3px SOLID rgb(67, 63, 63);
+        border-radius: 12px; box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5); padding: 2px; color 0.3s, color 0.3s;"
+           onmouseover="this.style.backgroundColor='rgb(236, 208, 156)'; this.style.color='grey';"
+           onmouseout="this.style.backgroundColor='grey'; this.style.color='whitesmoke';">
+            <i class="fa-solid fa-cart-plus fa-sm"></i>
+        </a>
+    </header>
+
+{% for card in cards %}
+    <div>
+        <section style="display: flex; border: 3px SOLID black; border-radius: 50px;">
+            <img src="{{ card.images.url }}" alt="{{ card.images.url }}" style="border: 1px SOLID black; border-radius: 42px; box-shadow: 0px 0px 5px 10px rgba(0, 0, 0, 5);">
+            <p style="box-shadow: 0px 0px 5px 10px rgba(0, 0, 0, 5); font-size: 20px; border: 1px SOLID black; border-radius: 42px; color: whitesmoke; background-color: grey; padding: 0; margin: 0;">
+                <br><br><br>
+                {{ card.description }}
+                <br><br>
+                Price: {{ card.price }}$
+                <br><br>
+                <a href="{% url 'add_new_card' card.id %}"
+                   style="text-decoration: none; box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.5);
+                   font-family: Arial, Helvetica, sans-serif;
+                   color:whitesmoke; padding: 2px; background-color: grey;
+                   margin-left: 10px; border: 3px SOLID black;
+                   border-radius: 7px; transition: background-color 0.3s, color 0.3s;"
+                   onmouseover="this.style.backgroundColor='rgb(236, 208, 156)'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='grey'; this.style.color='whitesmoke';">Add New Card
+                </a>
+            </p>
+        </section>
+    </div>
+{% endfor %}
+
+</body>
+</html>

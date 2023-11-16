@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanclub Store</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/store.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body style="background-color: grey; margin: 0; background-image: url('/static/images/pld.png')">
+
+<div style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); border: 3px SOLID rgb(67, 63, 63); margin:0 auto;
+border-radius: 12px; box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.5);">
+    <h1 style="margin-left:5%;">{{ user.username }} Card</h1>
+    <form method="post" action="{% url 'checkout' %}" style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 20px">
+    {% csrf_token %}
+    {% for card_item in card_items %}
+        <p style="margin:0 auto;">{{ card_item.product.product_name }} - {{ card_item.quantity }}</p>
+    {% endfor %}
+        <p style="margin:0 auto;">Total Amount: {{ total_amount }}$</p>
+    <label for="delivery_address">Delivery Address:</label>
+        <br>
+    <input type="text" style="border: 3px SOLID rgb(67, 63, 63); border-radius: 8px; font-family: Arial, Helvetica, sans-serif; font-size: 20px;" placeholder="Address..." name="delivery_address" required
+    onfocus="if(this.placeholder == 'Address...') this.placeholder = ''" onblur="if(this.placeholder == '') this.placeholder = 'Address...'">
+        <br>
+    <button type="submit" style="border: 3px SOLID rgb(67, 63, 63); border-radius: 8px; font-family: Arial, Helvetica, sans-serif; font-size: 20px"
+            onmouseover="this.style.backgroundColor='rgb(236, 208, 156)'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='grey'; this.style.color='whitesmoke';">Place Order</button>
+    </form>
+</div>
+
+<p style="font-size: 40px;"> {{ error_message }} </p>
+
+</body>
+</html>

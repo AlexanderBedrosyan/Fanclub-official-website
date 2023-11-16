@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanclub Store</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/store.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body style="background-color: grey; margin: 0; background-image: url('/static/images/pld.png')">
+
+    <header class="header">
+        Официален магазин на Фенклуб Локомотив Пловдив
+        <a href="{% url 'view_cart'%}" style="color: whitesmoke; text-align: right; border: 3px SOLID rgb(67, 63, 63);
+        border-radius: 12px; box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5); padding: 2px; color 0.3s, color 0.3s;"
+           onmouseover="this.style.backgroundColor='rgb(236, 208, 156)'; this.style.color='grey';"
+           onmouseout="this.style.backgroundColor='grey'; this.style.color='whitesmoke';">
+            <i class="fa-solid fa-cart-plus fa-sm"></i>
+        </a>
+    </header>
+    
+    {% for product in products %}
+    <section class="card">
+        <div class="image-holder">
+            <a href="{{ product.images.url }}" class="img=wrap"><img src="{{ product.images.url }}"></a>
+        </div>
+        <div class="product-name">
+            <a href="#" class="title">{{ product.product_name }}</a>
+        </div>
+        <p>Price: $ {{ product.price }}</p>
+        <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart-button"
+           style="text-decoration: none;
+           font-family: Arial, Helvetica, sans-serif;
+           color:whitesmoke; padding: 2px; background-color: grey;
+           margin-left: 35.5%; border: 3px SOLID rgb(67, 63, 63);
+           border-radius: 7px; transition: background-color 0.3s, color 0.3s;"
+           onmouseover="this.style.backgroundColor='rgb(236, 208, 156)'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='grey'; this.style.color='whitesmoke';">Add to Cart</a>
+    </section>
+    {% endfor %}
+</body>
+</html>
