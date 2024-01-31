@@ -1,0 +1,52 @@
+{{ form.username }}
+{{ form.username.label_tag }}
+{{ form.username.errors }}
+
+.register {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-image: url('pld.jpg');
+    border: 3px SOLID whitesmoke;
+    font-size: 30px;
+    border-radius: 5px;
+    margin-top: 7%;
+    margin-left: 40%;
+    width: 350px;
+    height: 350px;
+    text-align: center;
+}
+
+.register input{
+    margin-left: 24.5%;
+    display: block;
+}
+
+.register input:focus::placeholder {
+    opacity: 0;
+}
+
+.register button {
+    background-color: lightslategrey;
+    border: 3px SOLID whitesmoke;
+    width: 176px;
+    height: 50px;
+    margin-top: 10%;
+    border-radius: 5px;
+}
+
+.my-input-class {
+    margin-left: 24.5%;
+    display: block;
+    width: 48%;
+}
+
+
+.register p {
+    display: block;
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+.register button:hover {
+    background-color: whitesmoke;
+}
