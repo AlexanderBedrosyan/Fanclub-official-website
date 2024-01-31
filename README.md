@@ -26,3 +26,7 @@ Buttons "Инициативи" and "Събития" show some news about old and
 ![image](https://github.com/AlexanderBedrosyan/Fanclub-official-website/assets/126572116/5f771516-236e-443f-8973-f86d6fa6c062)
 
 This is how the registration system looks like. It needs Username, Email, Password and Password confirmation. The only way to order from the store is when you have a registration and to log in with it.
+
+![image](https://github.com/AlexanderBedrosyan/Fanclub-official-website/assets/126572116/0e866779-d7a2-4340-81ff-4a947c358d7f)
+
+Admin Panel – your central hub for managing the store and overseeing product operations. From here, you can effortlessly update product details, monitor inventory, and ensure a seamless shopping experience for your customers. Take control of your online store with ease and efficiency. In addition from this part of the project, there are all profiles which are already created.
